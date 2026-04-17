@@ -1,0 +1,194 @@
+.titleDetails {
+    min-height: 100vh;
+    background-color: #141414;
+    color: white;
+}
+
+.titleDetails_banner {
+    height: 70vh;
+    position: relative;
+    object-fit: contain;
+}
+
+.titleDetails_banner_fadeTop {
+    height: 150px;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.8), transparent);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.titleDetails_content {
+    position: absolute;
+    bottom: 10%;
+    left: 40px;
+    max-width: 600px;
+    z-index: 10;
+}
+
+.titleDetails_title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
+}
+
+.titleDetails_info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.match {
+    color: #46d369;
+}
+
+.hd {
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 3px;
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.titleDetails_playButton {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 0.5rem 2rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.titleDetails_playButton:hover {
+    background-color: rgba(255,255,255,0.7);
+}
+
+.titleDetails_description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
+}
+
+.titleDetails_banner_fadeBottom {
+    height: 15rem;
+    background-image: linear-gradient(180deg, transparent, rgba(20,20,20,0.6), #141414);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.titleDetails_bottom {
+    padding: 0 40px 50px;
+}
+
+.titleDetails_episodesSection {
+    margin-top: 20px;
+}
+
+.titleDetails_episodesHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titleDetails_episodesHeader h3 {
+    font-size: 1.5rem;
+}
+
+.titleDetails_seasonSelect {
+    background-color: #242424;
+    color: white;
+    padding: 10px 15px;
+    border: 1px solid #404040;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+}
+
+.titleDetails_episodesList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.titleDetails_episode {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 4px;
+    border-bottom: 1px solid #404040;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.titleDetails_episode:hover {
+    background-color: #333;
+}
+
+.episode_number {
+    font-size: 1.5rem;
+    color: #d2d2d2;
+    min-width: 40px;
+}
+
+.episode_img {
+    width: 150px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+
+.episode_info {
+    flex: 1;
+}
+
+.episode_infoHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.episode_infoHeader h4 {
+    font-size: 1.1rem;
+}
+
+.episode_infoHeader span {
+    color: #a3a3a3;
+}
+
+.episode_info p {
+    color: #d2d2d2;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.episode_playIcon {
+    position: absolute;
+    left: 115px; /* Centers icon on the image approximately */
+    opacity: 0;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    padding: 10px;
+    transition: opacity 0.2s;
+}
+
+.titleDetails_episode:hover .episode_playIcon {
+    opacity: 1;
+}
