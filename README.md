@@ -16,7 +16,7 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
 ### 4. Netflix Original Content
 ![Rows](./screenshots/home%20page%202.jpeg)
 
-### 5. Regional Selections (Tamil & Hindi)
+### 5. Regional Selections 
 ![Regional](./screenshots/home%20page3.jpeg)
 
 ### 6. Dynamic Title Details & Episodes
