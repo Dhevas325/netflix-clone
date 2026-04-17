@@ -6,12 +6,16 @@ import Nav from './Nav';
 import './TitleDetails.css';
 import { IoPlaySharp, IoAddSharp, IoCheckmarkSharp } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToList, removeFromList, selectList } from './features/listSlice';
+import { selectList } from './features/listSlice';
+import { selectUser } from './features/userSlice';
+import { db } from './firebase';
+import { doc, setDoc, deleteDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
 function TitleDetails() {
     const { type, id } = useParams();
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
     const myList = useSelector(selectList);
     const inList = myList.find(item => item.id === Number(id));
 
@@ -60,17 +64,38 @@ function TitleDetails() {
         navigate(`/play/tv/${id}/${seasonNum}/${episodeNum}`);
     };
 
-    const handleListToggle = () => {
-        if (inList) {
-            dispatch(removeFromList({ id: movie.id }));
-        } else {
-            dispatch(addToList({ 
-                id: movie.id, 
-                title: movie.title || movie.name, 
-                poster_path: movie.poster_path,
-                backdrop_path: movie.backdrop_path,
-                media_type: type
-            }));
+    function truncate(string, n) {
+        return string?.length > n ? string.substr(0, n - 1) + '...' : string;
+    }
+
+    const handleListToggle = async () => {
+        if (!user || user.uid === 'guest') {
+            alert("Please sign in to save movies to your list!");
+            return;
+        }
+
+        const listRef = doc(db, "customers", user.uid, "myList", "list");
+        
+        const movieItem = { 
+            id: movie.id, 
+            title: movie.title || movie.name, 
+            poster_path: movie.poster_path,
+            backdrop_path: movie.backdrop_path,
+            media_type: type
+        };
+
+        try {
+            if (inList) {
+                await setDoc(listRef, {
+                    items: myList.filter(item => item.id !== movie.id)
+                });
+            } else {
+                await setDoc(listRef, {
+                    items: [...myList, movieItem]
+                });
+            }
+        } catch (error) {
+            console.error("Error updating watchlist:", error);
         }
     };
 

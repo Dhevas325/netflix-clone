@@ -144,6 +144,24 @@ body {
   border-radius: 4px;
 }
 
+.nav_right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav_profileName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: none; /* Hide on small screens */
+}
+
+@media (min-width: 768px) {
+  .nav_profileName {
+    display: inline;
+  }
+}
+
 .player {
   width: 100vw;
   height: 100vh;
@@ -160,10 +178,10 @@ body {
   cursor: pointer;
 }
 
-.player video {
+.player iframe {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  border: none;
 }
 
 .nav_search {

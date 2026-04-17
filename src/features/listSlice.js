@@ -6,6 +6,9 @@ export const listSlice = createSlice({
     myList: [],
   },
   reducers: {
+    setList: (state, action) => {
+      state.myList = action.payload;
+    },
     addToList: (state, action) => {
       // Check if movie already exists in list to avoid duplicates
       if (!state.myList.find(item => item.id === action.payload.id)) {
@@ -18,7 +21,7 @@ export const listSlice = createSlice({
   },
 });
 
-export const { addToList, removeFromList } = listSlice.actions;
+export const { setList, addToList, removeFromList } = listSlice.actions;
 
 export const selectList = (state) => state.list.myList;
 

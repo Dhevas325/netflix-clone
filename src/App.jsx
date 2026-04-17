@@ -5,28 +5,49 @@ import ProfileScreen from './ProfileScreen';
 import Player from './Player';
 import SearchScreen from './SearchScreen';
 import TitleDetails from './TitleDetails';
-import { auth } from './firebase';
+import { auth, db } from './firebase';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProfileSelectScreen from './ProfileSelectScreen';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout, selectUser } from './features/userSlice';
+import { login, logout, selectUser, selectActiveProfile } from './features/userSlice';
+import { setList } from './features/listSlice';
+import { doc, onSnapshot } from "firebase/firestore";
 
 function App() {
   const user = useSelector(selectUser);
+  const activeProfile = useSelector(selectActiveProfile);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+    let unsubscribeList;
+
+    const unsubscribeAuth = auth.onAuthStateChanged(userAuth => {
       if (userAuth) {
         dispatch(login({
           uid: userAuth.uid,
           email: userAuth.email,
         }));
+
+        // Listen to Firestore for this user's watchlist
+        unsubscribeList = onSnapshot(doc(db, "customers", userAuth.uid, "myList", "list"), (doc) => {
+          if (doc.exists()) {
+            dispatch(setList(doc.data().items || []));
+          } else {
+            dispatch(setList([]));
+          }
+        });
+
       } else {
         dispatch(logout());
+        dispatch(setList([]));
+        if (unsubscribeList) unsubscribeList();
       }
     });
 
-    return unsubscribe;
+    return () => {
+      unsubscribeAuth();
+      if (unsubscribeList) unsubscribeList();
+    };
   }, [dispatch]);
 
   return (
@@ -54,6 +75,8 @@ function App() {
             </button>
             <LoginScreen />
           </>
+        ) : !activeProfile ? (
+          <ProfileSelectScreen />
         ) : (
           <Routes>
             <Route path="/profile" element={<ProfileScreen />} />

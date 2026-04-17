@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectActiveProfile } from './features/userSlice';
 
 function Nav() {
     const [show, handleShow] = useState(false);
     const [searchInput, setSearchInput] = useState('');
     const navigate = useNavigate();
+    const activeProfile = useSelector(selectActiveProfile);
 
     const transitionNavBar = () => {
         if (window.scrollY > 100) {
@@ -45,13 +48,16 @@ function Nav() {
                 />
             </form>
 
-            <img
-                onClick={() => navigate('/profile')}
-                className="nav_avatar"
-                style={{ cursor: 'pointer' }}
-                src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-                alt="Netflix Avatar"
-            />
+            <div className="nav_right">
+                {activeProfile && <span className="nav_profileName">{activeProfile.name}</span>}
+                <img
+                    onClick={() => navigate('/profile')}
+                    className="nav_avatar"
+                    style={{ cursor: 'pointer' }}
+                    src={activeProfile?.avatar || "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"}
+                    alt="Netflix Avatar"
+                />
+            </div>
         </div>
     );
 }

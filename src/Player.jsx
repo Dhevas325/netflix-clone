@@ -6,7 +6,8 @@ import axios from './axios';
 const providers = [
     { name: "Server 1", getUrl: (type, vid) => type === 'tv' ? `https://vidsrc.xyz/embed/tv/${vid}` : `https://vidsrc.xyz/embed/movie/${vid}` },
     { name: "Server 2", getUrl: (type, vid) => type === 'tv' ? `https://vidlink.pro/tv/${vid}` : `https://vidlink.pro/movie/${vid}` },
-    { name: "Server 3", getUrl: (type, vid) => type === 'tv' ? `https://vidsrc.cc/v2/embed/tv/${vid}` : `https://vidsrc.cc/v2/embed/movie/${vid}` },
+    { name: "Server 3", getUrl: (type, vid) => type === 'tv' ? `https://vidsrc.me/embed/tv/${vid}` : `https://vidsrc.me/embed/movie/${vid}` },
+    { name: "Server 4", getUrl: (type, vid) => type === 'tv' ? `https://vidsrc.cc/v2/embed/tv/${vid}` : `https://vidsrc.cc/v2/embed/movie/${vid}` },
 ];
 
 function Player() {
@@ -19,15 +20,16 @@ function Player() {
 
     useEffect(() => {
         async function fetchIMDB() {
+            if (!API_KEY) return;
             try {
-                const res = await axios.get(`/${type}/${id}/external_ids?api_key=${API_KEY}`);
-                setImdbId(res.data.imdb_id);
+                const res = await axios.get(`${type}/${id}/external_ids?api_key=${API_KEY}`);
+                setImdbId(res.data.imdb_id || null);
             } catch (e) { console.error("ID fetch failed"); }
         }
         fetchIMDB();
     }, [type, id, API_KEY]);
 
-    const videoId = imdbId || id;
+    const videoId = id || imdbId;
     let finalId = videoId;
     if (type === 'tv') {
         finalId = `${videoId}/${season || 1}/${episode || 1}`;

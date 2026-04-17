@@ -1,8 +1,29 @@
 # üçø Netflix Clone - Production Ready
 
-A high-performance Netflix clone built with the **MERN stack**, **Firebase Authentication**, **Cloud Firestore**, and **TMDB API**. This project features a real-time trailer player, personal watchlists, and a fully responsive ultra-premium UI.
+A high-performance Netflix clone built with the **MERN stack**, **Firebase Authentication**, **Cloud Firestore**, and **TMDB API**.
 
-![Netflix Clone Preview](https://github.com/Dhevas325/netflix-clone/raw/main/public/preview.png) *(Note: Add your own preview image)*
+## üôî Visual Walkthrough
+
+### 1. Who's Watching?
+![Profiles](./screenshots/manage%20profile.jpeg)
+
+### 2. Premium Hero Banner
+![Banner](./screenshots/home%20page1.jpeg)
+
+### 3. Netflix Original Content
+![Rows](./screenshots/home%20page%202.jpeg)
+
+### 4. Regional Selections (Tamil & Hindi)
+![Regional](./screenshots/home%20page3.jpeg)
+
+### 5. Smart Search functionality
+![Search](./screenshots/internal%20page.jpeg)
+
+### 6. Dynamic Title Details & Episodes
+![Details](./screenshots/Login.jpeg)
+
+### 7. Ultra-Fast Global Streaming Player
+![Player](./screenshots/video%20play.jpeg)
 
 ## Hollywood Features
 - **üîì Secure Authentication**: Powered by Firebase Auth (Email/Password & Guest Bypass).

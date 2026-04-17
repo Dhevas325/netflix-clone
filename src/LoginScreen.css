@@ -95,3 +95,36 @@
     cursor: pointer;
     box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+    .loginScreen_logo {
+        width: 120px;
+    }
+    .loginScreen_body > h1 {
+        font-size: 2rem;
+    }
+    .loginScreen_body > h2 {
+        font-size: 1.2rem;
+    }
+    .loginScreen_input > form > input {
+        width: 70%;
+    }
+}
+
+@media (max-width: 480px) {
+    .loginScreen_body > h1 {
+        font-size: 1.5rem;
+    }
+    .loginScreen_input > form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .loginScreen_input > form > input {
+        width: 100%;
+    }
+    .loginScreen_getStarted {
+        width: 100%;
+    }
+}

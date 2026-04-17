@@ -3,13 +3,17 @@ import axios from './axios';
 import requests from './requests';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToList, removeFromList, selectList } from './features/listSlice';
+import { selectList } from './features/listSlice';
+import { selectUser } from './features/userSlice';
 import { motion } from 'framer-motion';
+import { db } from './firebase';
+import { doc, setDoc } from "firebase/firestore";
 
 function Banner() {
     const [movie, setMovie] = useState([]);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const user = useSelector(selectUser);
     const myList = useSelector(selectList);
     
     // Check if the current banner movie is in the user's list
@@ -38,17 +42,34 @@ function Banner() {
         return string?.length > n ? string.substr(0, n - 1) + '...' : string;
     }
 
-    const handleListToggle = () => {
-        if (inList) {
-            dispatch(removeFromList({ id: movie.id }));
-        } else {
-            dispatch(addToList({ 
-                id: movie.id, 
-                title: movie.title || movie.name, 
-                poster_path: movie.poster_path,
-                backdrop_path: movie.backdrop_path,
-                media_type: type
-            }));
+    const handleListToggle = async () => {
+        if (!user || user.uid === 'guest') {
+            alert("Please sign in to save movies to your list!");
+            return;
+        }
+
+        const listRef = doc(db, "customers", user.uid, "myList", "list");
+        
+        const movieItem = { 
+            id: movie.id, 
+            title: movie.title || movie.name, 
+            poster_path: movie.poster_path,
+            backdrop_path: movie.backdrop_path,
+            media_type: type
+        };
+
+        try {
+            if (inList) {
+                await setDoc(listRef, {
+                    items: myList.filter(item => item.id !== movie.id)
+                });
+            } else {
+                await setDoc(listRef, {
+                    items: [...myList, movieItem]
+                });
+            }
+        } catch (error) {
+            console.error("Error updating watchlist:", error);
         }
     };
 
