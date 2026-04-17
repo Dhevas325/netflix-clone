@@ -1,8 +1,8 @@
-# üçø Netflix Clone - Production Ready
+#  Netflix Clone - Production Ready
 
 A high-performance Netflix clone built with the **MERN stack**, **Firebase Authentication**, **Cloud Firestore**, and **TMDB API**.
 
-## üôî Visual Walkthrough
+## Visual Walkthrough
 
 ### 1. Secure Landing & Login
 ![Login](./screenshots/Login.jpeg)
@@ -26,12 +26,12 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
 ![Player](./screenshots/video%20play.jpeg)
 
 ## Hollywood Features
-- **üîì Secure Authentication**: Powered by Firebase Auth (Email/Password & Guest Bypass).
-- **üîç Dynamic Search**: Real-time movie and TV show search using TMDB API.
-- **üì∫ Advanced Player**: Multiple server options (Server 1, 2, 3) for smooth streaming.
-- **üìå My List (Watchlist)**: Add your favorite titles to your personal list (Synced with Redux & Firestore).
-- **üç± Premium UI**: Smooth transitions, glassmorphism, and Netflix-accurate design.
-- **üì∫ Dynamic Banner**: Automatically fetches trending Netflix Originals for the hero section.
+- ** Secure Authentication**: Powered by Firebase Auth (Email/Password & Guest Bypass).
+- ** Dynamic Search**: Real-time movie and TV show search using TMDB API.
+- ** Advanced Player**: Multiple server options (Server 1, 2, 3) for smooth streaming.
+- ** My List (Watchlist)**: Add your favorite titles to your personal list (Synced with Redux & Firestore).
+- ** Premium UI**: Smooth transitions, glassmorphism, and Netflix-accurate design.
+- ** Dynamic Banner**: Automatically fetches trending Netflix Originals for the hero section.
 
 ## Tech Stack
 - **Frontend**: React.js, Redux Toolkit (State Management), React Router v7.
@@ -62,7 +62,7 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
    npm run dev
    ```
 
-## üö® Security Notice
+## Security Notice
 If you accidentally pushed your `.env` file to GitHub, please follow these steps to remove it from history:
 1. Add `.env` to your `.gitignore`.
 2. Run `git rm --cached .env`.
