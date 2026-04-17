@@ -4,23 +4,23 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
 
 ## üôî Visual Walkthrough
 
-### 1. Who's Watching?
+### 1. Secure Landing & Login
+![Login](./screenshots/Login.jpeg)
+
+### 2. Who's Watching? (Profile Selection)
 ![Profiles](./screenshots/manage%20profile.jpeg)
 
-### 2. Premium Hero Banner
+### 3. Premium Hero Banner
 ![Banner](./screenshots/home%20page1.jpeg)
 
-### 3. Netflix Original Content
+### 4. Netflix Original Content
 ![Rows](./screenshots/home%20page%202.jpeg)
 
-### 4. Regional Selections (Tamil & Hindi)
+### 5. Regional Selections (Tamil & Hindi)
 ![Regional](./screenshots/home%20page3.jpeg)
 
-### 5. Smart Search functionality
-![Search](./screenshots/internal%20page.jpeg)
-
 ### 6. Dynamic Title Details & Episodes
-![Details](./screenshots/Login.jpeg)
+![Details](./screenshots/internal%20page.jpeg)
 
 ### 7. Ultra-Fast Global Streaming Player
 ![Player](./screenshots/video%20play.jpeg)
