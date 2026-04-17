@@ -54,6 +54,13 @@
     color: rgba(255,255,255,0.9);
 }
 
+.titleDetails_buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1.5rem;
+}
+
 .titleDetails_playButton {
     cursor: pointer;
     color: black;
@@ -65,13 +72,46 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 1.5rem;
     font-size: 1.2rem;
     transition: all 0.2s;
 }
 
 .titleDetails_playButton:hover {
     background-color: rgba(255,255,255,0.7);
+}
+
+.titleDetails_listButton {
+    cursor: pointer;
+    background-color: rgba(42, 42, 42, 0.6);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    position: relative;
+    padding: 0;
+}
+
+.titleDetails_listButton:hover {
+    background-color: rgba(70, 70, 70, 0.6);
+    border-color: white;
+}
+
+.titleDetails_listButton span {
+    position: absolute;
+    bottom: -25px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.titleDetails_listButton:hover span {
+    opacity: 1;
 }
 
 .titleDetails_description {

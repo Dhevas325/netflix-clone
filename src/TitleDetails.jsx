@@ -4,11 +4,17 @@ import axios from './axios';
 import { fetchDetails, fetchSeason } from './requests';
 import Nav from './Nav';
 import './TitleDetails.css';
-import { IoPlaySharp } from 'react-icons/io5';
+import { IoPlaySharp, IoAddSharp, IoCheckmarkSharp } from 'react-icons/io5';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToList, removeFromList, selectList } from './features/listSlice';
 
 function TitleDetails() {
     const { type, id } = useParams();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const myList = useSelector(selectList);
+    const inList = myList.find(item => item.id === Number(id));
+
     const [movie, setMovie] = useState({});
     const [seasons, setSeasons] = useState([]);
     const [selectedSeason, setSelectedSeason] = useState(1);
@@ -54,8 +60,18 @@ function TitleDetails() {
         navigate(`/play/tv/${id}/${seasonNum}/${episodeNum}`);
     };
 
-    const truncate = (string, n) => {
-        return string?.length > n ? string.substr(0, n - 1) + '...' : string;
+    const handleListToggle = () => {
+        if (inList) {
+            dispatch(removeFromList({ id: movie.id }));
+        } else {
+            dispatch(addToList({ 
+                id: movie.id, 
+                title: movie.title || movie.name, 
+                poster_path: movie.poster_path,
+                backdrop_path: movie.backdrop_path,
+                media_type: type
+            }));
+        }
     };
 
     return (
@@ -80,11 +96,17 @@ function TitleDetails() {
                         {type === 'tv' && <span>{movie?.number_of_seasons} Seasons</span>}
                         <span className="hd">HD</span>
                     </div>
-                    {type === 'movie' && (
-                        <button className="titleDetails_playButton" onClick={handlePlayMovie}>
-                            <IoPlaySharp size={24} /> <span>Play</span>
+                    <div className="titleDetails_buttons">
+                        {type === 'movie' && (
+                            <button className="titleDetails_playButton" onClick={handlePlayMovie}>
+                                <IoPlaySharp size={24} /> <span>Play</span>
+                            </button>
+                        )}
+                        <button className="titleDetails_listButton" onClick={handleListToggle}>
+                            {inList ? <IoCheckmarkSharp size={24} /> : <IoAddSharp size={24} />}
+                            <span>My List</span>
                         </button>
-                    )}
+                    </div>
                     <h2 className="titleDetails_description">
                         {truncate(movie?.overview, 300)}
                     </h2>

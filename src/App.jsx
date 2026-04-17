@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import HomeScreen from './HomeScreen';
 import LoginScreen from './LoginScreen';
 import ProfileScreen from './ProfileScreen';
@@ -7,24 +7,27 @@ import SearchScreen from './SearchScreen';
 import TitleDetails from './TitleDetails';
 import { auth } from './firebase';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { login, logout, selectUser } from './features/userSlice';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(userAuth => {
       if (userAuth) {
-        setUser({
+        dispatch(login({
           uid: userAuth.uid,
           email: userAuth.email,
-        });
+        }));
       } else {
-        setUser(null);
+        dispatch(logout());
       }
     });
 
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="app">
@@ -32,7 +35,7 @@ function App() {
         {!user ? (
           <>
             <button 
-              onClick={() => setUser({ uid: 'guest', email: 'guest@netflix.com' })}
+              onClick={() => dispatch(login({ uid: 'guest', email: 'guest@netflix.com' }))}
               style={{
                 position: 'fixed',
                 top: '20px',
@@ -53,7 +56,7 @@ function App() {
           </>
         ) : (
           <Routes>
-            <Route path="/profile" element={<ProfileScreen user={user} />} />
+            <Route path="/profile" element={<ProfileScreen />} />
             <Route path="/" element={<HomeScreen />} />
             <Route path="/search" element={<SearchScreen />} />
             <Route path="/title/:type/:id" element={<TitleDetails />} />

@@ -1,16 +1,52 @@
-# React + Vite
+# üçø Netflix Clone - Production Ready
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance Netflix clone built with the **MERN stack**, **Firebase Authentication**, **Cloud Firestore**, and **TMDB API**. This project features a real-time trailer player, personal watchlists, and a fully responsive ultra-premium UI.
 
-Currently, two official plugins are available:
+![Netflix Clone Preview](https://github.com/Dhevas325/netflix-clone/raw/main/public/preview.png) *(Note: Add your own preview image)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Hollywood Features
+- **üîì Secure Authentication**: Powered by Firebase Auth (Email/Password & Guest Bypass).
+- **üîç Dynamic Search**: Real-time movie and TV show search using TMDB API.
+- **üì∫ Advanced Player**: Multiple server options (Server 1, 2, 3) for smooth streaming.
+- **üìå My List (Watchlist)**: Add your favorite titles to your personal list (Synced with Redux & Firestore).
+- **üç± Premium UI**: Smooth transitions, glassmorphism, and Netflix-accurate design.
+- **üì∫ Dynamic Banner**: Automatically fetches trending Netflix Originals for the hero section.
 
-## React Compiler
+## Tech Stack
+- **Frontend**: React.js, Redux Toolkit (State Management), React Router v7.
+- **Backend**: Firebase (Authentication & Firestore).
+- **API**: TMDB (The Movie Database).
+- **Styling**: Vanilla CSS with modern flexbox/grid.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Dhevas325/netflix-clone.git
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up Environment Variables**
+   Create a `.env` file in the root and add:
+   ```env
+   VITE_TMDB_API_KEY=your_tmdb_api_key
+   ```
+
+4. **Run the App**
+   ```bash
+   npm run dev
+   ```
+
+## üö® Security Notice
+If you accidentally pushed your `.env` file to GitHub, please follow these steps to remove it from history:
+1. Add `.env` to your `.gitignore`.
+2. Run `git rm --cached .env`.
+3. Commit and push: `git commit -m "Remove sensitive .env file" && git push`.
+4. **IMPORTANT**: Reset your TMDB API key in the TMDB dashboard.
+
+## License
+MIT License. Created by [Dhevas325](https://github.com/Dhevas325).

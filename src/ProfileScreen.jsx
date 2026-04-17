@@ -2,8 +2,11 @@ import React from 'react';
 import './ProfileScreen.css';
 import Nav from './Nav';
 import { auth } from './firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from './features/userSlice';
 
-function ProfileScreen({ user }) {
+function ProfileScreen() {
+    const user = useSelector(selectUser);
     return (
         <div className="profileScreen">
             <Nav />
