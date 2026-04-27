@@ -24,14 +24,19 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 | Voice Listening State | Search Results (Voice Triggered) |
 |---|---|
 | ![Voice Search Listening](./output/voice_search_listening.png) | ![Voice Search Results](./output/voice_search_youth.png) |
-*Hands-free movie searching powered by Web Speech API.*
 
-### 5️⃣ Smart Recommendations & Discovery
+### 5️⃣ 💖 Interactive Rating & Personalization
+| Heart Burst Animation | Personalized "My List" |
+|---|---|
+| ![Heart Animation](./output/movie_details_heart_animation.png) | ![My List](./output/my_list_page.png) |
+*Custom Framer Motion heart-burst effects and Cloud-Synced watchlist.*
+
+### 6️⃣ 🎭 Smart Recommendations & Discovery
 | Mood-Based Suggestions | Smart Recommendations |
 |---|---|
 | ![Mood Suggestions](./output/home_screen_mood_suggestions.png) | ![Because You Watched](./output/suggestions_because_you_watched.png) |
 
-### 6️⃣ Advanced Player & Subtitle System
+### 7️⃣ Advanced Player & Subtitle System
 | Audio & Subtitle Options | Video with Subtitles |
 |---|---|
 | ![Subtitle Options](./output/subtitle_english_options.png) | ![Playing with Subtitles](./output/video_playing_with_subtitles.png) |
@@ -41,6 +46,7 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 ## 🚀 Key Features (Premium Implementation)
 - **🎉 Real-Time Watch Party:** Seamlessly synchronized co-viewing experience with a **Robust Fallback System**.
 - **🎙️ Voice-Enabled Search:** Hands-free searching functionality using Web Speech API.
+- **💖 Interactive Rating System:** Netflix-style "Like", "Dislike", and "Love" buttons with animated heart effects.
 - **🎭 Smart Recommendation Engine:** Includes "Because you watched" and mood-based curation.
 - **🔒 Parental PIN Security:** Profile-level security for individual user accounts.
 - **🎬 Intelligent Trailer System:** Multi-server fallback architecture for 99.9% trailer reliability.
