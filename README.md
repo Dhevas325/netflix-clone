@@ -22,19 +22,6 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 
 ---
 
-## 🎥 Demo Walkthrough
-[Click here to watch the full demo video](./netflix_video.mp4)
-
-*Use these timestamps to navigate the features:*
-- **0:00** – Secure Authentication & Guest Login Bypass  
-- **0:08** – Homepage & Glassmorphic Navigation  
-- **0:20** – Intelligent Trailer Playback (Auto-fallback demo)  
-- **0:35** – **Watch Party** (Real-time Sync & UI)  
-- **0:50** – **Voice Search** & Results  
-- **1:05** – Parental PIN & Multi-Profile Management  
-
----
-
 ## 🧠 Technical Architecture & Resilience
 
 ### 🛡️ Robust UI Resilience (The "Demo Mode" Logic)
