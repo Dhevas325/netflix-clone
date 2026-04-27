@@ -28,7 +28,8 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
 ![My List](./output/my_list_page.png)
 
 ### 7. Voice-Enabled Search
-![Voice Search](./output/voice_search_listening.png)
+![Voice Search Listening](./output/voice_search_listening.png)
+![Voice Search Results](./output/voice_search_youth.png)
 
 ### 8. Parental PIN & Profile Security
 ![Parental PIN](./output/parental%20pin.png)
