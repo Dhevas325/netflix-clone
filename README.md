@@ -2,28 +2,30 @@
 
 A high-performance Netflix clone built with the **MERN stack**, **Firebase Authentication**, **Cloud Firestore**, and **TMDB API**.
 
-## Visual Walkthrough
+## 📸 Visual Walkthrough
 
-### 1. Secure Landing & Login
-![Login](./screenshots/Login.jpeg)
+### 1. Premium Hero Banner & Navigation
+![Hero Banner](./output/dragon_movie_banner.png)
 
-### 2. Who's Watching? (Profile Selection)
-![Profiles](./screenshots/manage%20profile.jpeg)
+### 2. Mood Based Suggestions
+![Mood Suggestions](./output/home_screen_mood_suggestions.png)
 
-### 3. Premium Hero Banner
-![Banner](./screenshots/home%20page1.jpeg)
+### 3. Interactive Rating - Heart Hover & Animation
+![Heart Hover](./output/dragon_details_heart_hover.png)
+![Heart Animation](./output/movie_details_heart_animation.png)
 
-### 4. Netflix Original Content
-![Rows](./screenshots/home%20page%202.jpeg)
+### 4. Intelligent Trailer System (Auto-Play Popup)
+![Trailer Popup](./output/movie_trailer_popup.png)
 
-### 5. Regional Selections 
-![Regional](./screenshots/home%20page3.jpeg)
+### 5. Advanced Player - Audio & Subtitle Controls
+![Subtitle Loading](./output/subtitle_loading_english.png)
+![Subtitle Options](./output/subtitle_english_options.png)
 
-### 6. Dynamic Title Details & Episodes
-![Details](./screenshots/internal%20page.jpeg)
+### 6. Cloud-Synced My List
+![My List](./output/my_list_page.png)
 
-### 7. Ultra-Fast Global Streaming Player
-![Player](./screenshots/video%20play.jpeg)
+### 7. Voice-Enabled Search
+![Voice Search](./output/voice_search_listening.png)
 
 ## 🌟 Premium Features Implemented
 - **🤖 Intelligent Trailer System**: Automatically fetches HD YouTube trailers using a highly robust multi-server fallback architecture (6+ Invidious API instances & `movie-trailer` library). It intelligently prioritizes fetching trailers in the movie's native/original language for an authentic experience.
