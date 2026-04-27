@@ -30,6 +30,9 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
 ### 7. Voice-Enabled Search
 ![Voice Search](./output/voice_search_listening.png)
 
+### 8. Parental PIN & Profile Security
+![Parental PIN](./output/parental%20pin.png)
+
 ## 🌟 Premium Features Implemented
 - **🤖 Intelligent Trailer System**: Automatically fetches HD YouTube trailers using a highly robust multi-server fallback architecture (6+ Invidious API instances & `movie-trailer` library). It intelligently prioritizes fetching trailers in the movie's native/original language for an authentic experience.
 - **🎉 Real-Time Watch Party**: Seamlessly integrated co-viewing experience powered by Firebase Firestore, allowing users to watch synchronized streams with friends.
@@ -38,6 +41,7 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
 - **🎭 In-Depth Title Details**: Rich detail pages featuring dynamic cast lists (with actor profile images), TV show season/episode selectors, and intelligent "More Like This" recommendations.
 - **🎙️ Voice-Enabled Search**: Hands-free voice search functionality directly integrated into the sleek animated search bar.
 - **👥 Multi-Profile Management**: "Who's Watching" screen, customizable avatars, and a dedicated 'Kids' profile toggle for filtered viewing.
+- **🔐 Parental PIN Security**: Integrated profile-level PIN protection to secure individual user accounts and restrict access.
 - **☁️ Cloud-Synced 'My List'**: Cross-device syncing of your watchlist directly to Firebase Firestore, managed efficiently via Redux Toolkit state management.
 - **🎬 Advanced Streaming Player**: Custom player interface with multiple streaming server fallbacks to guarantee continuous playback, complete with subtitle and audio options.
 - **🔒 Secure Authentication**: Powered by Firebase Auth (Email/Password registration and an instant Guest Login Bypass).
