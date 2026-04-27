@@ -5,6 +5,8 @@ import ProfileScreen from './ProfileScreen';
 import Player from './Player';
 import SearchScreen from './SearchScreen';
 import TitleDetails from './TitleDetails';
+import MyListScreen from './MyListScreen';
+import Intro from './Intro';
 import { auth, db } from './firebase';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProfileSelectScreen from './ProfileSelectScreen';
@@ -13,28 +15,33 @@ import { login, logout, selectUser, selectActiveProfile } from './features/userS
 import { setList } from './features/listSlice';
 import { doc, onSnapshot } from "firebase/firestore";
 
+import WatchParty from './WatchParty';
+
 function App() {
   const user = useSelector(selectUser);
   const activeProfile = useSelector(selectActiveProfile);
   const dispatch = useDispatch();
+  const [showIntro, setShowIntro] = React.useState(true);
 
   useEffect(() => {
     let unsubscribeList;
 
     const unsubscribeAuth = auth.onAuthStateChanged(userAuth => {
+      console.log("Auth State Changed:", userAuth?.email);
       if (userAuth) {
         dispatch(login({
           uid: userAuth.uid,
           email: userAuth.email,
         }));
 
-        // Listen to Firestore for this user's watchlist
         unsubscribeList = onSnapshot(doc(db, "customers", userAuth.uid, "myList", "list"), (doc) => {
           if (doc.exists()) {
             dispatch(setList(doc.data().items || []));
           } else {
             dispatch(setList([]));
           }
+        }, (error) => {
+            console.error("Firestore error:", error);
         });
 
       } else {
@@ -50,8 +57,11 @@ function App() {
     };
   }, [dispatch]);
 
+  console.log("App Render - User:", !!user, "Profile:", !!activeProfile);
+
   return (
     <div className="app">
+      {showIntro && <Intro onFinish={() => setShowIntro(false)} />}
       <Router>
         {!user ? (
           <>
@@ -83,8 +93,10 @@ function App() {
             <Route path="/" element={<HomeScreen />} />
             <Route path="/search" element={<SearchScreen />} />
             <Route path="/title/:type/:id" element={<TitleDetails />} />
+            <Route path="/mylist" element={<MyListScreen />} />
             <Route path="/play/:type/:id" element={<Player />} />
             <Route path="/play/:type/:id/:season/:episode" element={<Player />} />
+            <Route path="/watch-party/:type/:id" element={<WatchParty />} />
           </Routes>
         )}
       </Router>

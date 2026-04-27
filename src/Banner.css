@@ -1,0 +1,254 @@
+.banner {
+    color: white;
+    object-fit: contain;
+    height: 85vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Fix for the background video */
+.banner_video_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.banner_video_iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 115vw; /* Slightly wider to hide bars */
+    height: 65vw; /* Aspect ratio match */
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    border: none;
+}
+
+.banner_video_overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(20, 20, 20, 0.7) 0%,
+        rgba(20, 20, 20, 0.1) 30%,
+        rgba(20, 20, 20, 0.1) 70%,
+        rgba(20, 20, 20, 0.7) 100%
+    );
+    z-index: 1;
+}
+
+.banner_contents {
+    position: relative;
+    z-index: 2;
+    margin-left: 50px;
+    padding-top: 25vh;
+    height: 100%;
+}
+
+/* Metadata: N SERIES / FILM Badge */
+.banner_metadata {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.n_series_badge {
+    color: #e50914;
+    font-size: 2.2rem;
+    line-height: 1;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.n_series_text {
+    font-size: 0.9rem;
+    color: #a3a3a3;
+    letter-spacing: 4px;
+}
+
+.banner_title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    padding-bottom: 0.5rem; /* Reduced to fit Top 10 badge */
+    max-width: 800px;
+    line-height: 1.1;
+    text-shadow: 2px 4px 4px rgba(0,0,0,0.45);
+}
+
+.banner_top10 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.top10_box {
+    background-color: #000;
+    border: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 4px;
+    line-height: 1;
+}
+
+.top10_rank_small {
+    font-size: 0.5rem;
+    font-weight: 900;
+}
+
+.top10_num_small {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #e50914;
+}
+
+.top10_text {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Stats Row */
+.banner_stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.banner_match {
+    color: #46d369;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.banner_year {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.banner_rating {
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 1px 6px;
+    font-size: 0.8rem;
+    border-radius: 2px;
+}
+
+.banner_hd {
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 1px 4px;
+    font-size: 0.7rem;
+    border-radius: 3px;
+    font-weight: 900;
+}
+
+.banner_description {
+    width: 35rem;
+    line-height: 1.4;
+    padding-top: 0.5rem;
+    font-size: 1.2rem;
+    max-width: 600px;
+    height: auto;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.45);
+    margin-bottom: 30px;
+}
+
+/* Buttons Mirror Match */
+.banner_buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.banner_button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-weight: 900;
+    border-radius: 4px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s;
+}
+
+.banner_button.play {
+    background-color: white;
+    color: black;
+}
+
+.banner_button.play:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.banner_button.info {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+}
+
+.banner_button.info:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+.banner_mute_toggle {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    transition: background 0.2s;
+}
+
+.banner_mute_toggle:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.banner--fadeBottom {
+    height: 15rem;
+    background-image: linear-gradient(
+        180deg,
+        transparent,
+        rgba(37, 37, 37, 0.61),
+        #111
+    );
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .banner_contents {
+        margin-left: 20px;
+        padding-top: 20vh;
+    }
+    .banner_title {
+        font-size: 2.5rem;
+    }
+    .banner_description {
+        width: 100%;
+        font-size: 1rem;
+    }
+    .banner_button {
+        padding: 8px 20px;
+        font-size: 1rem;
+    }
+}

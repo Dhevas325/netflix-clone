@@ -1,0 +1,137 @@
+.top10Row {
+    margin-left: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.top10Row h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.top10_posters {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px 0;
+}
+
+.top10_posters::-webkit-scrollbar {
+    display: none;
+}
+
+.top10_item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: -40px; /* Overlap the number and poster */
+    transition: transform 450ms;
+    cursor: pointer;
+    min-width: 220px; /* Ensure enough space for number + poster */
+}
+
+.top10_item:hover {
+    transform: scale(1.08);
+    z-index: 100;
+}
+
+.top10_rank {
+    flex: 0 0 auto;
+    width: 140px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -40px; /* Overlap with poster */
+    z-index: 0;
+}
+
+.rank_number {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.rank_text {
+    font-size: 110px;
+    font-weight: 900;
+    fill: #000; /* Dark black fill */
+    stroke: #595959; /* Official grey stroke */
+    stroke-width: 2.5px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: -5px;
+}
+
+.top10_item:hover .rank_text {
+    stroke: #fff;
+    stroke-width: 3px;
+}
+
+.top10Row h2 {
+    font-size: 1.4vw;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #e5e5e5;
+}
+
+/* Number styles for 10 specifically if needed */
+.top10_item:nth-child(10) .top10_rank {
+    letter-spacing: -25px;
+    margin-right: 15px;
+}
+
+.top10_poster {
+    object-fit: cover;
+    width: 140px;
+    height: 200px;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .top10_rank {
+        font-size: 100px;
+        -webkit-text-stroke: 2px #555;
+        width: 60px;
+    }
+    .top10_poster {
+        width: 100px;
+        height: 150px;
+    }
+    .top10_item {
+        min-width: 140px;
+        margin-right: -20px;
+    }
+}
+
+/* TOP 10 Badge Styling */
+.top10_badge {
+    position: absolute;
+    top: 0;
+    right: 40px; /* Adjust based on overlap */
+    background-color: #e50914;
+    color: white;
+    width: 28px;
+    height: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    line-height: 1;
+    z-index: 5;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    border-radius: 0 0 2px 2px;
+}
+
+.top10_badge_text {
+    font-size: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.top10_badge_number {
+    font-size: 0.9rem;
+}
+

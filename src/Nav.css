@@ -1,0 +1,125 @@
+.nav_profile_wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.nav_caret {
+    color: white;
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+    margin-left: 2px;
+}
+
+.nav_profile_wrap:hover .nav_caret {
+    transform: rotate(180deg);
+}
+
+.nav_profile_dropdown {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    z-index: 5000;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.dropdown_arrow {
+    position: absolute;
+    top: -10px;
+    right: 32px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid rgba(255, 255, 255, 0.9);
+}
+
+.dropdown_profiles {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dropdown_profile_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.dropdown_profile_item:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown_profile_item:hover {
+    opacity: 0.8;
+}
+
+.dropdown_profile_item img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+}
+
+.dropdown_profile_item span {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.dropdown_profile_item:hover span {
+    text-decoration: underline;
+}
+
+.dropdown_menu_items {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.menu_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    color: white;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menu_item svg {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.menu_item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.menu_item:hover span {
+    text-decoration: underline;
+}
+
+.dropdown_signout {
+    padding: 18px;
+    text-align: center;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown_signout:hover {
+    background: rgba(255, 255, 255, 0.05);
+    text-decoration: underline;
+}

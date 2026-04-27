@@ -28,3 +28,10 @@ dist-ssr
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Personal files
+QuickRent/
+campus placement.pdf
+output/
+screenshots/
+*.lnk

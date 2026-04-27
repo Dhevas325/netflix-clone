@@ -108,3 +108,150 @@
         height: 100px;
     }
 }
+
+/* Parental Control PIN Styling */
+.profile_lock_icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    z-index: 5;
+}
+
+.pinOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #141414;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pin_close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.pin_close:hover {
+    opacity: 1;
+}
+
+.pin_container {
+    text-align: center;
+    max-width: 600px;
+}
+
+.pin_sub {
+    color: #808080;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.pin_container h2 {
+    font-size: 2.5rem;
+    margin: 20px 0 40px;
+    font-weight: 500;
+}
+
+.pin_profile_preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.pin_profile_preview img {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+}
+
+.pin_profile_preview span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.pin_inputs {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.pin_inputs input {
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    border: 1px solid #808080;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.pin_inputs input:focus {
+    border-color: white;
+    border-width: 2px;
+}
+
+.pin_error_msg {
+    color: #e50914;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.pin_forgot {
+    color: #808080;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: underline;
+    margin-top: 40px;
+}
+
+.pin_forgot:hover {
+    color: white;
+}
+
+/* Animations */
+.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@media (max-width: 600px) {
+    .pin_inputs input {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    .pin_container h2 {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+}

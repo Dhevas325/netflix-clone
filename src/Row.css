@@ -1,0 +1,247 @@
+.row_poster_container {
+    position: relative;
+    cursor: pointer;
+    transition: transform 450ms;
+    margin-right: 10px;
+    flex-shrink: 0; /* CRITICAL: Prevents flexbox from squishing the posters */
+    display: flex;
+    align-items: center;
+}
+
+.row_poster_container:hover {
+    transform: scale(1.08);
+    z-index: 10;
+}
+
+.row_posterLarge:hover {
+    transform: scale(1.09);
+}
+
+/* Premium Hover Video Previews */
+.row_poster_container {
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin-right: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #181818;
+    z-index: 1;
+}
+
+.row_poster_container.hovered {
+    transform: scale(1.4) translateY(-20px);
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.row_poster_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.row_video_preview {
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+}
+
+.row_video_preview iframe {
+    width: 100%;
+    height: 130px;
+    pointer-events: none;
+    transform: scale(1.4);
+}
+
+.row_hover_info {
+    padding: 12px;
+    background-color: #181818;
+    color: white;
+}
+
+.hover_buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.h_btn {
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.h_btn:hover {
+    border-color: white;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.h_btn.p {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.h_btn.more {
+    margin-left: auto;
+}
+
+.h_btn.remove_hist:hover {
+    background-color: #e50914;
+    border-color: #e50914;
+    color: white;
+}
+
+.hover_meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.match {
+    color: #46d369;
+}
+
+.rating {
+    border: 1px solid grey;
+    padding: 0 4px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+}
+
+
+.row_poster_img {
+    object-fit: contain;
+    max-height: 100px;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+    display: block;
+}
+
+.row_posterLarge .row_poster_img {
+    max-height: 250px;
+}
+
+.row_trailer_wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    background: black;
+    z-index: 5;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.row_trailer_iframe {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.3); /* Slight zoom to hide YouTube black bars */
+    pointer-events: none;
+}
+
+/* New Feature: NEW Badge Styling */
+.row_new_badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #e50914;
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 900;
+    padding: 2px 5px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    z-index: 2;
+}
+
+/* New Feature: Progress Bar Styling */
+.row_progress_bar {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 1px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.row_progress_fill {
+    height: 100%;
+    background-color: #e50914;
+}
+
+/* Delete Button Styling */
+.row_delete_btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 50%;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.row_delete_btn:hover {
+    background-color: #e50914;
+    transform: scale(1.1);
+}
+
+/* Coming Soon Styling */
+.row_coming_soon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 2;
+}
+
+.row_release_date {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #46d369; /* Netflix green for dates */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.row_remind_btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.row_remind_btn:hover {
+    background-color: white;
+}
+
+

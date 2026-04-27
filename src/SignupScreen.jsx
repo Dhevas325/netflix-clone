@@ -49,6 +49,19 @@ function SignupScreen() {
                 <input ref={emailRef} placeholder="Email address" type="email" />
                 <input ref={passwordRef} placeholder="Password" type="password" />
                 <button type="submit" onClick={signIn}>Sign In (or Sign Up)</button>
+                <div className="signupScreen_or">OR</div>
+                <button 
+                    type="button" 
+                    className="signupScreen_guestButton" 
+                    onClick={(e) => {
+                        e.preventDefault();
+                        emailRef.current.value = "guest@netflix.com";
+                        passwordRef.current.value = "guest123";
+                        signIn(e);
+                    }}
+                >
+                    Guest Sign In
+                </button>
                 <h4>
                     <span className="signupScreen_gray">New to Netflix? </span>
                     <span className="signupScreen_link" onClick={register}>Sign up now.</span>

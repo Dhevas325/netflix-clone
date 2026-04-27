@@ -1,0 +1,44 @@
+.intro_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro_container svg {
+    width: 300px;
+    animation: zoom-in 3.5s forwards;
+}
+
+.intro_container path {
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 4000;
+    animation: draw 2.5s ease-in-out forwards;
+}
+
+.fade_out {
+    animation: fade-out 1s forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes zoom-in {
+    0% { transform: scale(1); }
+    80% { transform: scale(1.5); }
+    100% { transform: scale(30); opacity: 0; }
+}
+
+@keyframes fade-out {
+    to { opacity: 0; visibility: hidden; pointer-events: none; }
+}

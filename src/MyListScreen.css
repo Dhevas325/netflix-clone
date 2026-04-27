@@ -1,0 +1,99 @@
+.myListScreen {
+    min-height: 100vh;
+    background-color: #111;
+    color: white;
+}
+
+.myList_content {
+    padding: 100px 4% 50px;
+}
+
+.myList_content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.myList_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px 10px;
+}
+
+.myList_item {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.myList_item:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.myList_item img {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.myList_item_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 0 0 4px 4px;
+}
+
+.myList_item:hover .myList_item_info {
+    opacity: 1;
+}
+
+.myList_item_info p {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.myList_empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    color: #808080;
+}
+
+.myList_empty p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.myList_empty button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.myList_empty button:hover {
+    background-color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 768px) {
+    .myList_grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .myList_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

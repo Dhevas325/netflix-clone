@@ -1,10 +1,12 @@
 .signupScreen {
-    max-width: 300px;
-    padding: 70px;
+    max-width: 450px;
+    padding: 60px 68px 40px;
     margin-left: auto;
     margin-right: auto;
-    background: rgba(0, 0, 0, 0.85);
-    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    min-height: 500px;
+    box-sizing: border-box;
 }
 
 .signupScreen > form {
@@ -14,49 +16,86 @@
 
 .signupScreen > form > h1 {
     text-align: left;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .signupScreen > form > input {
     outline: none;
-    height: 40px;
-    margin-bottom: 14px;
-    border-radius: 5px;
+    height: 50px;
+    margin-bottom: 16px;
+    border-radius: 4px;
     border: none;
-    padding: 5px 15px;
+    padding: 0 20px;
     background-color: #333;
     color: white;
+    font-size: 1rem;
 }
 
 .signupScreen > form > button {
     padding: 16px 20px;
     font-size: 1rem;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #e50914;
-    font-weight: 600;
+    font-weight: 700;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 24px;
+    transition: background-color 0.2s;
+}
+
+.signupScreen > form > button:hover {
+    background-color: #c11119;
 }
 
 .signupScreen > form > h4 {
     text-align: left;
     margin-top: 30px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
+    color: #737373;
 }
 
 .signupScreen_gray {
-    color: gray;
+    color: #737373;
 }
 
 .signupScreen_link {
     cursor: pointer;
     color: white;
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .signupScreen_link:hover {
     text-decoration: underline;
+}
+
+.signupScreen_or {
+    text-align: center;
+    color: #737373;
+    margin: 20px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.signupScreen_guestButton {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid #737373 !important;
+    color: white !important;
+    margin-top: 0 !important;
+    font-size: 0.9rem !important;
+}
+
+.signupScreen_guestButton:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+@media (max-width: 768px) {
+    .signupScreen {
+        max-width: 100%;
+        padding: 40px 20px;
+        background: black;
+    }
 }
