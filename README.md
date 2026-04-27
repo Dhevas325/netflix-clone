@@ -4,11 +4,26 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 
 ---
 
-## 📸 Visual Walkthrough
+## 📸 Visual Walkthrough & Gallery
 
-### 🍿 Watch Party (Demo Mode)
+### 1️⃣ Premium Authentication & Profile Security
+| Profile Selection | Parental PIN Lock |
+|---|---|
+| ![Profile Management](./output/profile_management_screen.png) | ![Parental PIN](./output/parental_pin_lock.png) |
+
+### 2️⃣ Cinematic UI & Experience
+| Hero Banner | Top 10 Trending Row |
+|---|---|
+| ![Hero Banner](./output/homepage_hero_banner.png) | ![Top 10 Trends](./output/top_10_trending_row.png) |
+
+### 3️⃣ Real-Time Watch Party (Demo Mode)
 ![Watch Party Demo](./output/watch_party_demo.png)
 *Featuring a seamless real-time chat interface with automatic demo-mode fallback for 100% uptime.*
+
+### 4️⃣ Interactive Movie Details & Trailers
+| Heart Burst Animation | Multi-Server Trailer System |
+|---|---|
+| ![Heart Animation](./output/movie_details_heart_animation.png) | ![Trailer Popup](./output/movie_trailer_popup.png) |
 
 ---
 
@@ -16,7 +31,7 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 - **🎉 Real-Time Watch Party:** Seamlessly synchronized co-viewing experience. Includes a **Robust Fallback System** that switches to "Demo Mode" during server connectivity issues.
 - **🎤 Voice-Enabled Search:** Hands-free searching functionality integrated using the Web Speech API.
 - **🔒 Parental PIN Security:** Profile-level PIN protection to secure individual user accounts.
-- **🎬 Intelligent Trailer System:** Multi-server fallback architecture ensuring HD trailer playback.
+- **🎬 Intelligent Trailer System:** Robust multi-server fallback architecture ensuring HD trailer playback.
 - **☁️ Cloud-Synced 'My List':** Firebase Firestore integration for cross-device watchlists.
 - **🎨 Cinematic UI/UX:** Pixel-perfect glassmorphic design with smooth `framer-motion` animations.
 
