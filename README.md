@@ -20,18 +20,19 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 ![Watch Party Demo](./output/watch_party_demo.png)
 *Featuring a seamless real-time chat interface with automatic demo-mode fallback for 100% uptime.*
 
-### 4️⃣ Intelligent Search & Recommendations
-| Voice Search Listening | Smart Recommendations |
+### 4️⃣ 🎙️ Intelligent Voice-Enabled Search
+| Voice Listening State | Search Results (Voice Triggered) |
 |---|---|
-| ![Voice Search](./output/voice_search_listening.png) | ![Because You Watched](./output/suggestions_because_you_watched.png) |
+| ![Voice Search Listening](./output/voice_search_listening.png) | ![Voice Search Results](./output/voice_search_youth.png) |
+*Hands-free movie searching powered by Web Speech API.*
 
-### 5️⃣ Personalized Discovery & Watchlist
-| Mood-Based Suggestions | Cloud-Synced My List |
+### 5️⃣ Smart Recommendations & Discovery
+| Mood-Based Suggestions | Smart Recommendations |
 |---|---|
-| ![Mood Suggestions](./output/home_screen_mood_suggestions.png) | ![My List](./output/my_list_page.png) |
+| ![Mood Suggestions](./output/home_screen_mood_suggestions.png) | ![Because You Watched](./output/suggestions_because_you_watched.png) |
 
 ### 6️⃣ Advanced Player & Subtitle System
-| Subtitle Options | Video with Subtitles |
+| Audio & Subtitle Options | Video with Subtitles |
 |---|---|
 | ![Subtitle Options](./output/subtitle_english_options.png) | ![Playing with Subtitles](./output/video_playing_with_subtitles.png) |
 
