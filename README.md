@@ -20,37 +20,44 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 ![Watch Party Demo](./output/watch_party_demo.png)
 *Featuring a seamless real-time chat interface with automatic demo-mode fallback for 100% uptime.*
 
-### 4️⃣ Interactive Movie Details & Trailers
-| Heart Burst Animation | Multi-Server Trailer System |
+### 4️⃣ Intelligent Search & Personalization
+| Voice Search Listening | Search Results |
 |---|---|
-| ![Heart Animation](./output/movie_details_heart_animation.png) | ![Trailer Popup](./output/movie_trailer_popup.png) |
+| ![Voice Search](./output/voice_search_listening.png) | ![Voice Results](./output/voice_search_youth.png) |
+
+### 5️⃣ Content Discovery & Watchlist
+| Mood-Based Suggestions | Cloud-Synced My List |
+|---|---|
+| ![Mood Suggestions](./output/home_screen_mood_suggestions.png) | ![My List](./output/my_list_page.png) |
+
+### 6️⃣ Advanced Player Features
+| Audio & Subtitle Options | Heart Burst Animation |
+|---|---|
+| ![Subtitles](./output/subtitle_english_options.png) | ![Heart Animation](./output/movie_details_heart_animation.png) |
 
 ---
 
 ## 🚀 Key Features (Premium Implementation)
-- **🎉 Real-Time Watch Party:** Seamlessly synchronized co-viewing experience. Includes a **Robust Fallback System** that switches to "Demo Mode" during server connectivity issues.
-- **🎤 Voice-Enabled Search:** Hands-free searching functionality integrated using the Web Speech API.
-- **🔒 Parental PIN Security:** Profile-level PIN protection to secure individual user accounts.
-- **🎬 Intelligent Trailer System:** Robust multi-server fallback architecture ensuring HD trailer playback.
-- **☁️ Cloud-Synced 'My List':** Firebase Firestore integration for cross-device watchlists.
-- **🎨 Cinematic UI/UX:** Pixel-perfect glassmorphic design with smooth `framer-motion` animations.
+- **🎉 Real-Time Watch Party:** Seamlessly synchronized co-viewing experience with a **Robust Fallback System**.
+- **🎙️ Voice-Enabled Search:** Hands-free searching functionality using Web Speech API.
+- **🎭 Mood-Based Curation:** Intelligent row categorization based on user's current mood.
+- **🔒 Parental PIN Security:** Profile-level security for individual user accounts.
+- **🎬 Intelligent Trailer System:** Multi-server fallback architecture for 99.9% trailer reliability.
+- **💬 Multi-Language Support:** Custom player with Audio & Subtitle management.
+- **☁️ Cloud-Synced 'My List':** Firebase Firestore integration for cross-device persistence.
 
 ---
 
 ## 🧠 Technical Architecture & Resilience
 
 ### 🛡️ Robust UI Resilience (The "Demo Mode" Logic)
-One of the standout features of this project is its **resilience logic**. If the Firebase Firestore connection is delayed or unavailable, the application automatically triggers a **Demo Mode**. 
-- **User Benefit:** The user is never met with a broken screen or infinite loading.
-- **Developer Insight:** This demonstrates high-level error handling and "graceful degradation" principles.
+If the Firebase Firestore connection is delayed, the application automatically triggers a **Demo Mode**. 
+- **User Benefit:** No broken screens or infinite loading.
+- **Developer Insight:** High-level error handling and "graceful degradation".
 
 ### 1. Real-Time Watch Party Logic
 - **Protocol:** Master-Slave synchronization via Firestore `onSnapshot`.
 - **Latency Handling:** Sub-second sync using optimized state updates in Redux.
-
-### 2. Multi-Server Video Fallback
-- **Logic:** Tries Official TMDB -> Invidious API Nodes -> YouTube Scraper.
-- **Goal:** To eliminate the "Video Unavailable" error common in clones.
 
 ---
 
