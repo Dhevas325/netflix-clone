@@ -4,6 +4,9 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
 
 ## 📸 Visual Walkthrough
 
+### 🎥 Project Demo Video
+[Click here to watch the full demo video](./netflix_video.mp4)
+
 ### 1. Premium Hero Banner & Navigation
 ![Hero Banner](./output/dragon_movie_banner.png)
 
