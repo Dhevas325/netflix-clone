@@ -25,13 +25,17 @@ A high-performance Netflix clone built with the **MERN stack**, **Firebase Authe
 ### 7. Ultra-Fast Global Streaming Player
 ![Player](./screenshots/video%20play.jpeg)
 
-## Hollywood Features
-- ** Secure Authentication**: Powered by Firebase Auth (Email/Password & Guest Bypass).
-- ** Dynamic Search**: Real-time movie and TV show search using TMDB API.
-- ** Advanced Player**: Multiple server options (Server 1, 2, 3) for smooth streaming.
-- ** My List (Watchlist)**: Add your favorite titles to your personal list (Synced with Redux & Firestore).
-- ** Premium UI**: Smooth transitions, glassmorphism, and Netflix-accurate design.
-- ** Dynamic Banner**: Automatically fetches trending Netflix Originals for the hero section.
+## 🌟 Premium Features Implemented
+- **🤖 Intelligent Trailer System**: Automatically fetches HD YouTube trailers using a highly robust multi-server fallback architecture (6+ Invidious API instances & `movie-trailer` library). It intelligently prioritizes fetching trailers in the movie's native/original language for an authentic experience.
+- **🎉 Real-Time Watch Party**: Seamlessly integrated co-viewing experience powered by Firebase Firestore, allowing users to watch synchronized streams with friends.
+- **🎨 Cinematic UI/UX**: Pixel-perfect Netflix-accurate design. Features include glassmorphic transparent navigation bars, full-screen background video banners, customized 16:9 player wrappings, and dynamic "Top 10" ranking badges.
+- **💖 Interactive Rating System**: Netflix-style "Like", "Dislike", and "Love" rating buttons, featuring a custom `framer-motion` powered animated heart-burst effect upon interaction.
+- **🎭 In-Depth Title Details**: Rich detail pages featuring dynamic cast lists (with actor profile images), TV show season/episode selectors, and intelligent "More Like This" recommendations.
+- **🎙️ Voice-Enabled Search**: Hands-free voice search functionality directly integrated into the sleek animated search bar.
+- **👥 Multi-Profile Management**: "Who's Watching" screen, customizable avatars, and a dedicated 'Kids' profile toggle for filtered viewing.
+- **☁️ Cloud-Synced 'My List'**: Cross-device syncing of your watchlist directly to Firebase Firestore, managed efficiently via Redux Toolkit state management.
+- **🎬 Advanced Streaming Player**: Custom player interface with multiple streaming server fallbacks to guarantee continuous playback, complete with subtitle and audio options.
+- **🔒 Secure Authentication**: Powered by Firebase Auth (Email/Password registration and an instant Guest Login Bypass).
 
 ## Tech Stack
 - **Frontend**: React.js, Redux Toolkit (State Management), React Router v7.
