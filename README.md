@@ -20,30 +20,30 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 ![Watch Party Demo](./output/watch_party_demo.png)
 *Featuring a seamless real-time chat interface with automatic demo-mode fallback for 100% uptime.*
 
-### 4️⃣ Intelligent Search & Personalization
-| Voice Search Listening | Search Results |
+### 4️⃣ Intelligent Search & Recommendations
+| Voice Search Listening | Smart Recommendations |
 |---|---|
-| ![Voice Search](./output/voice_search_listening.png) | ![Voice Results](./output/voice_search_youth.png) |
+| ![Voice Search](./output/voice_search_listening.png) | ![Because You Watched](./output/suggestions_because_you_watched.png) |
 
-### 5️⃣ Content Discovery & Watchlist
+### 5️⃣ Personalized Discovery & Watchlist
 | Mood-Based Suggestions | Cloud-Synced My List |
 |---|---|
 | ![Mood Suggestions](./output/home_screen_mood_suggestions.png) | ![My List](./output/my_list_page.png) |
 
-### 6️⃣ Advanced Player Features
-| Audio & Subtitle Options | Heart Burst Animation |
+### 6️⃣ Advanced Player & Subtitle System
+| Subtitle Options | Video with Subtitles |
 |---|---|
-| ![Subtitles](./output/subtitle_english_options.png) | ![Heart Animation](./output/movie_details_heart_animation.png) |
+| ![Subtitle Options](./output/subtitle_english_options.png) | ![Playing with Subtitles](./output/video_playing_with_subtitles.png) |
 
 ---
 
 ## 🚀 Key Features (Premium Implementation)
 - **🎉 Real-Time Watch Party:** Seamlessly synchronized co-viewing experience with a **Robust Fallback System**.
 - **🎙️ Voice-Enabled Search:** Hands-free searching functionality using Web Speech API.
-- **🎭 Mood-Based Curation:** Intelligent row categorization based on user's current mood.
+- **🎭 Smart Recommendation Engine:** Includes "Because you watched" and mood-based curation.
 - **🔒 Parental PIN Security:** Profile-level security for individual user accounts.
 - **🎬 Intelligent Trailer System:** Multi-server fallback architecture for 99.9% trailer reliability.
-- **💬 Multi-Language Support:** Custom player with Audio & Subtitle management.
+- **💬 Advanced Subtitle Manager:** Custom player with multi-language subtitle and audio options.
 - **☁️ Cloud-Synced 'My List':** Firebase Firestore integration for cross-device persistence.
 
 ---
@@ -54,10 +54,6 @@ A high-performance Netflix clone built with **React**, **Redux**, **Firebase**, 
 If the Firebase Firestore connection is delayed, the application automatically triggers a **Demo Mode**. 
 - **User Benefit:** No broken screens or infinite loading.
 - **Developer Insight:** High-level error handling and "graceful degradation".
-
-### 1. Real-Time Watch Party Logic
-- **Protocol:** Master-Slave synchronization via Firestore `onSnapshot`.
-- **Latency Handling:** Sub-second sync using optimized state updates in Redux.
 
 ---
 
